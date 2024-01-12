@@ -1,20 +1,107 @@
-
+---
+import { Image } from 'astro:assets';
+import Navbar from '../components/nav'
+import GithubIcon from '../../public/github.svg'
+---
 
 <header>
 
-  <div>
+  <div class="titles">
     <h1>
       Jesus Lozada
     </h1>
     <h2>Frontend Developer</h2>
   </div>
-  <nav>
-    <ul>
-      <li><a href="#info">Info</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#about">About</a></li>
-    </ul>
-  </nav>
+  <Navbar/>
+  <div class="icon-container">
+    <a href="https://github.com/chewto" target="_blank">
+      <Image src={GithubIcon} alt="github" class='icon'/>
+    </a>
+    <a href="www.google.com" target="_blank">
+      <button class="resume-icon">Resume</button>
+    </a>
+  </div>
 </header>
+
+<style>
+
+  header{
+		display: flex;
+    flex-direction: column;
+		justify-content: center;
+		align-items:normal;
+    position: relative;
+    left: 0;
+    top: 0;
+    gap: 30px;
+    margin: 0 0 0 0;
+    animation: init 1250ms ;
+    animation-timing-function: ease-out;
+	}
+
+  .titles > h1 {
+    font-size: 40px;
+    color: var(--primary-letter-color);
+  }
+
+  .titles > h2 {
+    font-size: 24px;
+    color: var(--primary-letter-color);
+
+  }
+
+  .titles{
+    margin: 0 0 10px 0;
+  }
+
+  .icon-container{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .icon{
+    text-decoration: none;
+    background: var(--white);
+    width: 55px;
+    height: 55px;
+    padding: 4px;
+    border-radius: 100%;
+    filter: opacity(85%);
+  }
+
+  .icon:hover{
+    filter: brightness(1);
+  }
+
+  .resume-icon{
+    color: var(--white);
+    background: #000;
+    font-size: 20px;
+    padding: 8px;
+    border: 4px solid var(--white);
+    border-radius: 5px;
+    filter: opacity(85%);
+    cursor: pointer;
+  }
+
+  .resume-icon:hover{
+    filter: brightness(1);
+  }
+
+
+  @keyframes init {
+    0%{
+      opacity: 0;
+      left: -40px;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+  /* header > * {
+    color: var(--primary-letter-color)
+  } */
+
+
+</style>

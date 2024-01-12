@@ -1,0 +1,38 @@
+---
+import { skillData } from "../data/skill-data";
+import { Image } from "astro:assets";
+---
+
+
+{skillData.map((data)=> (
+  <div class="skill-container">
+    <Image src={data.image} alt={data.skillTitle}  class="skill-image"/>
+    <span class="skill-title">{data.skillTitle}</span>
+  </div>
+))}
+
+<style>
+  .skill-container{
+    background: #000;
+    border: 2px solid var(--white);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: 5px 5px;
+  }
+
+  .skill-image{
+    width: 80px;
+    height: 80px;
+    background: var(--white);
+    border-radius: 10px;
+    margin: 10px;
+  }
+
+  .skill-title {
+    color: var(--white);
+    text-align: center;
+    margin: 0 0 10px 0;
+  }
+</style>

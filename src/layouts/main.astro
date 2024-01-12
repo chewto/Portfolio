@@ -1,36 +1,65 @@
 ---
-import Experience from "../components/experience";
-import Skill from "../components/skill";
-import Project from "../components/project";
-import Contact from "../components/contact";
+import Experience from "../components/experience.astro";
+import Skill from "../components/skill.astro";
+import Project from "../components/project.astro";
 ---
 
 <main>
-  <section id="#info">
-    <article></article>
-  </section>
+  <section id="info">
+    <h3 class="section-title">About me</h3>
+    <article id="about-container">
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, eligendi cupiditate sed minima iure repudiandae ipsa odit dolor tempore illo ad aspernatur accusantium possimus voluptates, nesciunt fugiat, voluptatem suscipit ullam!
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, eligendi cupiditate sed minima iure repudiandae ipsa odit dolor tempore illo ad aspernatur accusantium possimus voluptates, nesciunt fugiat, voluptatem suscipit ullam!
 
-  <section id="#experience">
-    <article>
-      <Experience/>
+      </p>
     </article>
   </section>
 
-  <section id="#skills">
-    <article>
+  <section id="experience">
+    <h3 class="section-title">Experience</h3>
+    <article class="article-container">
+      <Experience/>
+    </article>
+  </section>
+  
+  <section id="projects">
+    <h3 class="section-title">Projects</h3>
+    <article class="article-container">
+      <Project/>
+    </article>
+  </section>
+  
+  <section id="skills">
+    <h3 class="section-title">Skills</h3>
+    <article id="wrap-container">
       <Skill/>
     </article>
   </section>
 
-  <section id="#projects">
-    <article>
-      <Project/>
-    </article>
-  </section>
-
-  <section id="#about">
-    <article>
-      <Contact/>
-    </article>
-  </section>
 </main>
+
+<style>
+  /* main{
+    display: flex;
+    flex-direction: column;
+  } */
+
+  .section-title{
+    color: var(--white);
+  }
+
+  #about-container{
+    color: var(--white);
+  }
+
+  #wrap-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .article-container{
+    display: flex;
+    justify-content: center;
+  }
+</style>

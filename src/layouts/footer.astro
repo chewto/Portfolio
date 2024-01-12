@@ -1,0 +1,35 @@
+---
+import { Image } from 'astro:assets'
+import GithubIcon from '../../public/github.svg'
+import LinkedinIcon from '../../public/linkedin.svg'
+---
+
+<footer id="contact">
+
+  <div>
+    <h6>contact me</h6>
+    <div>
+      <span>
+        Email:
+        <button>jesuselozada@gmail.com</button>
+      </span>
+      <span>
+        Phone:
+        <button>+58 4265826073</button>
+      </span>
+    </div>
+  </div>
+  <a href="https://github.com/chewto" target="_blank">
+    <Image src={GithubIcon} alt="github" class='icon'/>
+  </a>
+  <a href="https://www.linkedin.com/in/jesus-lozada-53653a242/" target="_blank">
+    <Image src={LinkedinIcon} alt="linkedin" class='icon'/>
+  </a>
+</footer>
+
+<style>
+  footer{
+    display: flex;
+    justify-content: center;
+  }
+</style>

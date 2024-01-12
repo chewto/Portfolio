@@ -1,0 +1,28 @@
+.list-element{
+  margin: 8px 0;
+  transition: 350ms all;
+}
+
+.list-element:hover{
+  transform: translateX(10px);
+}
+
+.list-element > a{
+  transition: 350ms all;
+  color: var(--secondary-letter-color);
+  text-decoration: none;
+}
+
+.list-element > a:hover{
+  color: var(--primary-letter-color);
+}
+
+
+/* .active-list-element{
+  color: var(--primary-letter-color);
+} */
+
+.nav-list{
+  list-style: none;
+  /* transform: translateX(-82px); */
+}

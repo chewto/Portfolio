@@ -1,0 +1,51 @@
+---
+import { experienceData } from "../data/experience-data";
+import { Image } from "astro:assets";
+---
+
+
+{experienceData.map((data) => (
+  <div class="experience-container">
+    <Image src={data.logo} alt={data.company}/>
+    <div class="info-container">
+      <h4>{data.company}</h4>
+      <span>{data.years}</span>
+      <p>{data.info}</p>
+    </div>
+  </div>
+))}
+
+<style>
+  .experience-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: fit-content;
+    border: 2px solid var(--white);
+    border-radius: 10px;
+    padding: 20px 20px;
+    color: var(--white);
+  }
+
+  .experience-container > img{
+    background: var(--white);
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  .info-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .info-container > h4{
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: 435px) {
+		.experience-container{
+      justify-content: center;
+    }
+	}
+</style>

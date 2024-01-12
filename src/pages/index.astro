@@ -2,13 +2,47 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../layouts/header.astro';
 import Main from '../layouts/main.astro';
+import Footer from '../layouts/footer.astro';
 ---
 
 <Layout title="Jesus Lozada Portfolio">
-	<Header></Header>
-	<Main></Main>
+		<div class="flex-container">
+
+					<Header></Header>
+			<div class="content-container">
+				<Main></Main>
+				<Footer></Footer>
+			</div>
+		</div>
 </Layout>
 
 <style>
+	.flex-container{
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 230px;
+	}
 
+	.content-container{
+		overflow-y:scroll;
+		height: 100vh;
+		width: 50%;
+	}
+
+	@media screen and (max-width: 770px){
+		.content-container{
+		overflow-y:hidden;
+			height: fit-content;
+		}
+	}
+
+	@media screen and (max-width: 435px) {
+		.content-container{
+		width: 84%;
+	}
+		.flex-container{
+			gap: 20px;
+		}
+	}
 </style>
