@@ -17,6 +17,11 @@ import Footer from '../layouts/footer.astro';
 </Layout>
 
 <style>
+
+	*{
+		scroll-behavior: smooth;
+	}
+
 	.flex-container{
 		display: flex;
 		justify-content: center;
@@ -25,15 +30,34 @@ import Footer from '../layouts/footer.astro';
 	}
 
 	.content-container{
+		padding: 0 20px 0 0;
 		overflow-y:scroll;
 		height: 100vh;
 		width: 50%;
+		animation: appear 1250ms ;
+    animation-timing-function: ease-out;
+	}
+
+	@keyframes appear {
+		0% {
+			filter: opacity(0);
+		}
+		100%{
+			filter: opacity(1)
+		}
 	}
 
 	@media screen and (max-width: 770px){
 		.content-container{
 		overflow-y:hidden;
 			height: fit-content;
+			padding: 0;
+			width: 84%;
+		}
+
+		.flex-container{
+			gap: 20px;
+			margin-top: 60px;
 		}
 	}
 

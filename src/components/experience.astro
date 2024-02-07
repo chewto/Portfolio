@@ -8,8 +8,8 @@ import { Image } from "astro:assets";
   <div class="experience-container">
     <Image src={data.logo} alt={data.company}/>
     <div class="info-container">
-      <h4>{data.company}</h4>
-      <span>{data.years}</span>
+      <h3>{data.company}</h3>
+      <h4>{data.years}</h4>
       <p>{data.info}</p>
     </div>
   </div>
@@ -18,17 +18,22 @@ import { Image } from "astro:assets";
 <style>
   .experience-container{
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     gap: 20px;
     width: fit-content;
     border: 2px solid var(--white);
     border-radius: 10px;
-    padding: 20px 20px;
+    padding: 20px 0;
     color: var(--white);
+    margin: 20px 0;
   }
 
   .experience-container > img{
     background: var(--white);
+    width: 20%;
+    height: 20%;
     padding: 5px;
     border-radius: 5px;
   }
@@ -37,11 +42,24 @@ import { Image } from "astro:assets";
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 70%;
   }
 
   .info-container > h4{
     font-size: 20px;
   }
+  @media screen and (max-width: 555px) {
+    .experience-container{
+      padding: 30px 0;
+  }
+  .info-container > p{
+    font-size: 16px;
+  }
+    .experience-container > img{
+    width: 40%;
+    height: 40%;
+  }
+	}
 
   @media screen and (max-width: 435px) {
 		.experience-container{

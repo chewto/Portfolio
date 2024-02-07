@@ -2,34 +2,56 @@
 import { Image } from 'astro:assets'
 import GithubIcon from '../../public/github.svg'
 import LinkedinIcon from '../../public/linkedin.svg'
+import { Contact } from '../components/contact'
 ---
 
 <footer id="contact">
 
-  <div>
-    <h6>contact me</h6>
-    <div>
-      <span>
-        Email:
-        <button>jesuselozada@gmail.com</button>
-      </span>
-      <span>
-        Phone:
-        <button>+58 4265826073</button>
-      </span>
-    </div>
+  <span class="title">Contact Info (click to copy to clipboard)</span> 
+
+  <div class="icon-container">
+    <Contact/>
+    <a href="https://www.linkedin.com/in/jesus-lozada-53653a242/" target="_blank">
+      <Image src={LinkedinIcon} alt="linkedin" class='icon'/>
+    </a>
   </div>
-  <a href="https://github.com/chewto" target="_blank">
-    <Image src={GithubIcon} alt="github" class='icon'/>
-  </a>
-  <a href="https://www.linkedin.com/in/jesus-lozada-53653a242/" target="_blank">
-    <Image src={LinkedinIcon} alt="linkedin" class='icon'/>
-  </a>
 </footer>
 
 <style>
+
+  .title {
+    text-align: center;
+    color: var(--white);
+    margin: 25px 0;
+  }
+
+.icon-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 0 0 20px 0;
+  }
+
+  .icon{
+    text-decoration: none;
+    background: var(--white);
+    width: 55px;
+    height: 55px;
+    padding: 4px;
+    border-radius: 100%;
+    filter: opacity(0.7);
+    transition: all 350ms;
+  }
+
+  .icon:hover{
+    filter: brightness(1);
+  }
+
   footer{
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 </style>

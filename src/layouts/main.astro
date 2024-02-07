@@ -9,9 +9,7 @@ import Project from "../components/project.astro";
     <h3 class="section-title">About me</h3>
     <article id="about-container">
       <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, eligendi cupiditate sed minima iure repudiandae ipsa odit dolor tempore illo ad aspernatur accusantium possimus voluptates, nesciunt fugiat, voluptatem suscipit ullam!
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, eligendi cupiditate sed minima iure repudiandae ipsa odit dolor tempore illo ad aspernatur accusantium possimus voluptates, nesciunt fugiat, voluptatem suscipit ullam!
-
+        I am a front-end developer with two years of experience creating user-friendly and responsive web applications,  working with technologies like Javascript, HTML, CSS, React, Angular +2, Python, C#. i’m looking to work with international companies where i can have the opportunity to contribute and focus on new challenges to keep me growing as a developer. I'm sure that i can bring value to your company with my creativity, problem-solving skills and attention to detail.
       </p>
     </article>
   </section>
@@ -40,17 +38,20 @@ import Project from "../components/project.astro";
 </main>
 
 <style>
-  /* main{
-    display: flex;
-    flex-direction: column;
-  } */
 
   .section-title{
     color: var(--white);
+    margin: 25px 0;
+    text-align: center;
   }
 
   #about-container{
     color: var(--white);
+    padding: 0 20px;
+  }
+
+  #about-container > p{
+    letter-spacing: 1px;
   }
 
   #wrap-container{
@@ -60,6 +61,8 @@ import Project from "../components/project.astro";
   }
   .article-container{
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
+
 </style>
